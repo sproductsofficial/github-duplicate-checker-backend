@@ -1,0 +1,20 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main  # or master, depending on your default branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: MigpTxRHeeCGSHqTsWADML7q
+          vercel-org-id: sproductss-projects  # Replace with your VERCEL_ORG_ID
+          vercel-project-id: github-duplicate-checker-backend  # Replace with your VERCEL_PROJECT_ID
